@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "preserve", // jsx 不转
+    "lib": [
+      // 编译时用的库
+      "ESNext",
+      "DOM"
+    ],
+    "skipLibCheck": true // 跳过类库检测
+  },
+  "exclude": [
+    // 排除掉哪些类库
+    "node_modules",
+    "**/__tests__",
+    "m-plus/**"
+  ]
+}

@@ -1,0 +1,15 @@
+# 编辑器目录和文件
+.idea
+
+# 包管理
+node_modules
+.pnpm-debug.log*
+
+# 系统
+.DS_Store
+
+# 构建后
+dist
+
+# local env files
+*.local
