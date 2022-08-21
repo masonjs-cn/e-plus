@@ -1,8 +1,14 @@
 {
   "files": [],
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
+  },
   "references": [
     // web
     { "path": "./tsconfig.web.json" },
+    // node
+    { "path": "./tsconfig.node.json" },
     // play
     { "path": "./tsconfig.play.json" }
   ]

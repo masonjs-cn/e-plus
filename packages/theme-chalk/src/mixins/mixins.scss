@@ -1,0 +1,80 @@
+/*
+* 引入config
+*/
+@use 'config' as *;
+
+/*
+* 将config暴露给全局使用
+*/
+@forward 'config';
+
+
+// BEM
+// .e-button{}
+@mixin b($block) {
+    $B: $namespace+'-'+$block;
+    .#{$B}{
+        @content;
+    }
+}
+
+// .e-button.is-xxx
+@mixin when($state) {
+    @at-root {
+        &.#{$state-prefix + $state} {
+            @content;
+        }
+    }
+}
+// &--primary => .e-button--primary
+@mixin m($modifier) {
+    @at-root {
+        #{&+$modifier-separator+$modifier} {
+            @content;
+        }
+    }
+}
+// &__header  => .e-button__header
+@mixin e($element) {
+    @at-root {
+        #{&+$element-separator+$element} {
+            @content;
+        }
+    }
+}
+
+
+// Scrollbar
+@mixin scroll-bar {
+    // 
+    $scrollbar-thumb-background: getCssVar('text-color', 'disabled');
+    $scrollbar-track-background: getCssVar('fill-color', 'blank');
+  
+    &::-webkit-scrollbar {
+      z-index: 11;
+      width: 6px;
+  
+      &:horizontal {
+        height: 6px;
+      }
+  
+      &-thumb {
+        border-radius: 5px;
+        width: 6px;
+        background: $scrollbar-thumb-background;
+      }
+  
+      &-corner {
+        background: $scrollbar-track-background;
+      }
+  
+      &-track {
+        background: $scrollbar-track-background;
+  
+        &-piece {
+          background: $scrollbar-track-background;
+          width: 6px;
+        }
+      }
+    }
+  }

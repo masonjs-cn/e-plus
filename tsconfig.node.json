@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "lib": ["ESNext"],
+    "types": ["node"],
+    "skipLibCheck": true
+  },
+  "include": [
+    "internal/**/*",
+    "internal/**/**/**/*",
+    "internal/**/*.json",
+    "scripts/**/*",
+    "packages/e-plus/*",
+    "packages/e-plus/version.ts",
+    "packages/e-plus/package.json"
+  ],
+  "exclude": ["**/__tests__/**", "**/tests/**", "**/dist"]
+}

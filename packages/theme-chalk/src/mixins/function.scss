@@ -1,0 +1,26 @@
+// 加入var的名字
+// joinVarName(('button', 'text-color')) => '--e-button-text-color'
+@function joinVarName($list) {
+  $name: "--" + config.$namespace;
+  @each $item in $list {
+    @if $item != "" {
+      $name: $name + "-" + $item;
+    }
+  }
+  @return $name;
+}
+
+// getCssVarName('button', 'text-color') => '--e-button-text-color'
+@function getCssVarName($args...) {
+  @return joinVarName($args);
+}
+
+// getCssVar('button', 'text-color') => var(--e-button-text-color)
+@function getCssVar($args...) {
+  @return var(#{joinVarName($args)});
+}
+
+// getCssVarWithDefault(('button', 'text-color'), red) => var(--e-button-text-color, red)
+@function getCssVarWithDefault($args, $default) {
+  @return var(#{joinVarName($args)}, #{$default});
+}
