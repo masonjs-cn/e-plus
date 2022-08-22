@@ -11,7 +11,7 @@
     "internal/**/**/**/*",
     "internal/**/*.json",
     "scripts/**/*",
-    "packages/e-plus/*",
+    "packages/**/*",
     "packages/e-plus/version.ts",
     "packages/e-plus/package.json"
   ],
